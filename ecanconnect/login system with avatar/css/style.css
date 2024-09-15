@@ -1,0 +1,555 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+:root{
+   --blue:#3498db;
+   --dark-blue:#2980b9;
+   --red:#e74c3c;
+   --dark-red:#c0392b;
+   --black:#333;
+   --white:#fff;
+   --light-bg:#eee;
+   --box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border: none;
+   text-decoration: none;
+}
+
+*::-webkit-scrollbar{
+   width: 10px;
+}
+
+*::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+   background-color: var(--blue);
+}
+
+.btn,
+.delete-btn{
+   width: 100%;
+   border-radius: 5px;
+   padding:10px 30px;
+   color:var(--white);
+   display: block;
+   text-align: center;
+   cursor: pointer;
+   font-size: 20px;
+   margin-top: 10px;
+}
+
+.btn{
+   background-color: var(--blue);
+}
+
+.btn:hover{
+   background-color: var(--dark-blue);
+}
+
+.delete-btn{
+   background-color: var(--red);
+}
+
+.delete-btn:hover{
+   background-color: var(--dark-red);
+}
+
+.message{
+   margin:10px 0;
+   width: 100%;
+   border-radius: 5px;
+   padding:10px;
+   text-align: center;
+   background-color: var(--red);
+   color:var(--white);
+   font-size: 20px;
+}
+
+.form-container{
+   min-height: 100vh;
+   background-color: var(--light-bg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+}
+
+.form-container form{
+   padding:20px;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   text-align: center;
+   width: 500px;
+   border-radius: 5px;
+}
+
+.form-container form h3{
+   margin-bottom: 10px;
+   font-size: 30px;
+   color:var(--black);
+   text-transform: uppercase;
+}
+
+.form-container form .box{
+   width: 100%;
+   border-radius: 5px;
+   padding:12px 14px;
+   font-size: 18px;
+   color:var(--black);
+   margin:10px 0;
+   background-color: var(--light-bg);
+}
+
+.form-container form p{
+   margin-top: 15px;
+   font-size: 20px;
+   color:var(--black);
+}
+
+.form-container form p a{
+   color:var(--red);
+}
+
+.form-container form p a:hover{
+   text-decoration: underline;
+}
+
+.container{
+   min-height: 100vh;
+   background-color: var(--light-bg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+}
+
+.container .profile{
+   padding:20px;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   text-align: center;
+   width: 400px;
+   border-radius: 5px;
+}
+
+.container .profile img{
+   height: 150px;
+   width: 150px;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 5px;
+}
+
+.container .profile h3{
+   margin:5px 0;
+   font-size: 20px;
+   color:var(--black);
+}
+
+.container .profile p{
+   margin-top: 20px;
+   color:var(--black);
+   font-size: 20px;
+}
+
+.container .profile p a{
+   color:var(--red);
+}
+
+.container .profile p a:hover{
+   text-decoration: underline;
+}
+
+.update-profile{
+   min-height: 100vh;
+   background-color: var(--light-bg);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+}
+
+.update-profile form{
+   padding:20px;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   text-align: center;
+   width: 700px;
+   text-align: center;
+   border-radius: 5px;
+}
+
+.update-profile form img{
+   height: 200px;
+   width: 200p;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 5px;
+}
+
+.update-profile form .flex{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+   gap:15px;
+}
+
+.update-profile form .flex .inputBox{
+   width: 49%;
+}
+
+.update-profile form .flex .inputBox span{
+   text-align: left;
+   display: block;
+   margin-top: 15px;
+   font-size: 17px;
+   color:var(--black);
+}
+
+.update-profile form .flex .inputBox .box{
+   width: 100%;
+   border-radius: 5px;
+   background-color: var(--light-bg);
+   padding:12px 14px;
+   font-size: 17px;
+   color:var(--black);
+   margin-top: 10px;
+}
+
+@media (max-width:650px){
+   .update-profile form .flex{
+      flex-wrap: wrap;
+      gap:0;
+   }
+   .update-profile form .flex .inputBox{
+      width: 100%;
+   }
+}
+/* Chat container styling */
+.chat-container {
+   max-width: 800px;
+   margin: 20px auto;
+   padding: 10px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile section styling - stick to the top-left */
+.profile-section {
+   display: flex;
+   align-items: center;
+   position: fixed; /* Changed to fixed for better responsiveness across screen sizes */
+   top: 7px;
+   left: 4px;
+   background-color: hwb(296 87% 7%);
+   padding: 2px 5px;
+   border-radius: 50px;
+   border: 6px solid hwb(247 10% 36%);
+   box-shadow: 0 2px 5px rgba(3, 1, 14, 0.1);
+   z-index: 1000; /* Ensure it stays above other elements */
+   max-width: 100%; /* Ensures it fits within the screen */
+}
+
+/* Profile icon styling */
+.profile-icon {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin-right: 10px;
+}
+
+/* Profile picture styling */
+.profile-pic {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 3px solid hsl(201, 65%, 51%); /* Green border around profile picture */
+}
+
+/* Welcome text styling */
+.profile-section h4 {
+   font-size: 1rem;
+   font-weight: 700;
+   color: hwb(272 11% 38%);
+   margin: 0;
+}
+
+/* Responsive adjustments for mobile and smaller screens */
+@media (max-width: 768px) {
+    .profile-section {
+        top: 5px;  /* Adjust position for smaller screens */
+        left: 5px;
+        padding: 1px 4px;
+    }
+
+    .profile-icon {
+        width: 45px;  /* Slightly smaller profile icon */
+        height: 45px;
+    }
+
+    .profile-section h4 {
+        font-size: 0.9rem;  /* Reduce font size slightly for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-section {
+        top: 3px; /* Further adjust for extra small screens */
+        left: 3px;
+        padding: 0px 2px;
+    }
+
+    .profile-icon {
+        width: 40px;  /* Further reduce icon size */
+        height: 40px;
+    }
+
+    .profile-section h4 {
+        font-size: 0.8rem;  /* Smaller font for extra small screens */
+    }
+}
+
+
+/* Search bar container styling */
+.search-bar {
+   position: fixed;
+   top: 10px; /* Move down slightly */
+   left: 260px; /* Move to the left */
+   right: 20px; /* Ensure space on the right side */
+   z-index: 1000; /* Ensure it stays above other elements */
+   width: 50%; /* Reduced width of the search bar */
+   max-width: 800px; /* Maximum width for larger screens */
+}
+
+/* Search bar input styling */
+.search-bar input {
+   width: 100%; /* Full width of the container */
+   padding: 8px; /* Reduced padding */
+   font-size: 18px; /* Reduced font size */
+   background-color: hwb(271 65% 25%);
+   border-radius: 50px;
+   border: 4px solid hwb(272 11% 38%); /* Adjusted border width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        top: 60px; /* Adjust top position for smaller screens */
+        left: 10px; /* Move closer to the left edge */
+        right: 10px; /* Adjust space on the right */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .search-bar input {
+        font-size: 16px; /* Smaller font size for better fit */
+        padding: 6px; /* Smaller padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        top: 60px; /* Further adjust top position for extra small screens */
+        left: 10px; /* Adjust left position */
+        right: 10px; /* Adjust space on the right */
+        width: 95%; /* Almost full width for extra small screens */
+    }
+
+    .search-bar input {
+        font-size: 14px; /* Smaller font size */
+        padding: 4px; /* Smaller padding */
+    }
+}
+
+
+.chat-area {
+   margin-top: 70px;
+   margin-left: 0px;
+
+}
+#searchResults {
+   margin-top: 20px;
+  
+
+   
+}
+
+.user {
+   padding: 10px;
+   cursor: pointer;
+   background-color: hsl(298, 52%, 37%);
+   border-radius: 5px;
+   margin-top: 5px;
+}
+
+.user:hover {
+   background-color: #dddce6;
+}
+
+/* User chat container styling */
+.user-chat-container {
+   display: flex;
+   height: 100vh;
+}
+
+.user-list {
+   width: 25%;
+   background-color: var(--light-bg);
+   padding: 20px;
+   box-shadow: var(--box-shadow);
+   overflow-y: auto;
+}
+
+.user-item {
+   padding: 10px;
+   cursor: pointer;
+   background-color: #f1f1f1;
+   border-radius: 5px;
+   margin-bottom: 5px;
+}
+
+.user-item:hover {
+   background-color: rgb(26, 200, 231);
+}
+
+/* Chat content styling */
+.chat-content {
+   width: 75%;
+   padding: 40px;
+}
+
+/* Chat history scrollable area */
+#chatHistory {
+   height: calc(100vh - 60px); /* Adjust as needed */
+   overflow-y: auto;
+}
+
+/* Message input field */
+#messageInput {
+   width: calc(100% - 70px);
+   padding: 10px;
+   border-radius: 10px;
+   border: 1px solid #3296c4;
+}
+
+/* Send message button */
+#sendMessage {
+   padding: 10px 15px;
+   background-color: hsl(258, 89%, 51%);
+   color: white;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+}
+
+/* General message styling */
+.message {
+   margin-bottom: 20px;
+   padding: 10px; /* Ensure there’s padding for text inside messages */
+   border-radius: 10px;
+   width: fit-content;
+   height: fit-content;
+   
+
+   max-width: 80%; /* Limit the width for readability */
+   position: relative; /* For positioning time */
+}
+
+.sent {
+   background-color: hwb(298 10% 25%); /* Darker shade for sent messages */
+   color: white; /* White text for contrast */
+   text-align: right; /* Align text to the right */
+   margin-left: auto; /* Align sent messages to the right */
+    /* Rounded corners with different values */
+   border: 1px solid rgb(195, 16, 222); /* Optional: border for visual separation */
+}
+
+/* Received messages styling */
+.received {
+   background-color: hwb(197 20% 20%); /* Lighter shade for received messages */
+   color: white; /* White text for readability */
+   text-align: left; /* Align text to the left */
+   margin-right: auto; /* Align received messages to the left */
+    /* Rounded corners with different values */
+   border: 1px solid rgb(40, 38, 165); /* Optional: border for visual separation */
+}
+
+
+/* Date divider styling */
+.date-divider {
+   text-align: center;
+   margin: 10px 0;
+   font-size: 12px;
+   color: #6c0968;
+   width: fit-content;
+   height: fit-content;
+
+   padding: 5px;
+   background-color: #3575bf;
+   border-radius: 50px;
+}
+
+/* Message time styling */
+.time {
+   font-size: 10px;
+   color: #5923a0;
+   display: block;
+   margin-top: 5px;
+}
+
+/* Back section styling */
+.back-section {
+   position: fixed;
+   bottom: 20px; /* Adjusted for mobile */
+   left: 20px;   /* Adjusted for mobile */
+   z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.back-section a {
+   display: inline-block;
+   padding: 10px 20px;
+   background-color: #5f16c4; /* Button background color */
+   color: white;
+   text-decoration: none;
+   border-radius: 50px; /* Rounded corners */
+   font-family: 'Poppins', sans-serif; /* Font style */
+   font-size: 16px; /* Make text size responsive */
+}
+
+.back-section a:hover {
+   background-color: #8c0dc3; /* Darken on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+   .back-section {
+       bottom: 10px;  /* Slightly higher for small screens */
+       left: 10px;    /* Slightly more margin on small screens */
+   }
+   
+   .back-section a {
+       font-size: 14px;  /* Smaller font for smaller screens */
+       padding: 8px 15px; /* Adjust button padding for smaller screens */
+   }
+}
+
+@media (max-width: 480px) {
+   .back-section {
+       bottom: 5px;  /* Even higher on extra small screens */
+       left: 5px;    /* Reduced margin */
+   }
+   
+   .back-section a {
+       font-size: 12px;  /* Further reduce font size */
+       padding: 6px 10px; /* Smaller padding */
+   }
+}
+
